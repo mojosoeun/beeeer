@@ -1,3 +1,4 @@
-from django.shortcuts import render
+from .models import Bar
 
-# Create your views here.
+def post_list(request):
+    return Bar.objects.all()
