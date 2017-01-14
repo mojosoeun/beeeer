@@ -104,7 +104,9 @@ DATABASES = {
     }
 }
 DATABASES['default'] = dj_database_url.config()
-# DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
+DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
+DATABASES['default']['NAME'] = 'beeeer'
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
