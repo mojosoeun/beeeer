@@ -126,7 +126,7 @@ ALLOWED_HOSTS = ['*']
 
 DEBUG = False
 
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 # GEOS_LIBRARY_PATH = environ.get('GEOS_LIBRARY_PATH')
