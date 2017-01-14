@@ -105,7 +105,7 @@ DATABASES = {
 }
 DATABASES['default'] = dj_database_url.config()
 DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
-DATABASES['default']['NAME'] = 'beeeer'
+# DATABASES['default']['NAME'] = 'beeeer'
 # DATABASES['default']['USER'] = 'sona'
 # DATABASES['default']['HOST'] = 'localhost'
 # DATABASES['default']['PORT'] = '5432'
