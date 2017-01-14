@@ -11,14 +11,17 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
-
 import dj_database_url
+from os import environ
 
-DATABASES = {
-    'default': dj_database_url.config(default=os.environ['DATABASE_URL'])
-}
-# Add PostGIS engine
-DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
+GEOS_LIBRARY_PATH = environ.get('GEOS_LIBRARY_PATH')
+GDAL_LIBRARY_PATH = environ.get('GDAL_LIBRARY_PATH')
+
+# DATABASES = {
+#     'default': dj_database_url.config(default=os.environ['DATABASE_URL'])
+# }
+# # Add PostGIS engine
+# DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -86,16 +89,16 @@ WSGI_APPLICATION = 'beeeer.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-#         'NAME': 'beeeer',
-#         'USER': 'sona',
-#         'PASSWORD': '',
-#         'HOST': '127.0.0.1',
-#         'PORT': '5432',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'beeeer',
+        'USER': 'sona',
+        'PASSWORD': '',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
