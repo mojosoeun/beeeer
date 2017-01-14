@@ -105,12 +105,6 @@ DATABASES = {
 }
 DATABASES['default'] = dj_database_url.config()
 DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
-# DATABASES['default']['NAME'] = 'beeeer'
-# DATABASES['default']['USER'] = 'sona'
-# DATABASES['default']['HOST'] = 'localhost'
-# DATABASES['default']['PORT'] = '5432'
-
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
@@ -139,9 +133,6 @@ DEBUG = False
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-
-# GEOS_LIBRARY_PATH = environ.get('GEOS_LIBRARY_PATH')
-# GDAL_LIBRARY_PATH = environ.get('GDAL_LIBRARY_PATH')
 
 try:
     from .local_settings import *
