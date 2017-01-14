@@ -9,6 +9,8 @@ class Bar(models.Model):
     lat = models.FloatField()
     rating = models.FloatField(default=0.00)
     desc = models.TextField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     # Returns the string representation of the model.
     def __str__(self):  # __unicode__ on Python 2

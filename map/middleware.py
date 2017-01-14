@@ -21,7 +21,9 @@ def json_response(qs):
             'lon': instance.lon,
             'lat': instance.lat,
             'rating': instance.rating,
-            'desc': instance.desc
+            'desc': instance.desc,
+            'created_at': instance.created_at,
+            'updated_at': instance.updated_at
         })
     return JsonResponse(mylist, safe=False)
 
