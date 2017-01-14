@@ -93,12 +93,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+DATABASES['default'] = dj_database_url.config()
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
     }
 }
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
@@ -127,10 +128,6 @@ DEBUG = False
 
 # GEOS_LIBRARY_PATH = environ.get('GEOS_LIBRARY_PATH')
 # GDAL_LIBRARY_PATH = environ.get('GDAL_LIBRARY_PATH')
-
-DATABASES['default'] = dj_database_url.config()
-DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
-
 
 try:
     from .local_settings import *
