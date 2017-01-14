@@ -14,11 +14,6 @@ import os
 import dj_database_url
 from os import environ
 
-GEOS_LIBRARY_PATH = environ.get('GEOS_LIBRARY_PATH')
-GDAL_LIBRARY_PATH = environ.get('GDAL_LIBRARY_PATH')
-
-DATABASES['default'] = dj_database_url.config()
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -99,6 +94,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': os.path.join(BASE_DIR, 'beeer.psql'),
+    }
+}
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
@@ -125,6 +127,10 @@ ALLOWED_HOSTS = ['*']
 
 DEBUG = False
 
+GEOS_LIBRARY_PATH = environ.get('GEOS_LIBRARY_PATH')
+GDAL_LIBRARY_PATH = environ.get('GDAL_LIBRARY_PATH')
+
+DATABASES['default'] = dj_database_url.config()
 
 try:
     from .local_settings import *
