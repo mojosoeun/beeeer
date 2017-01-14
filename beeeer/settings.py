@@ -94,12 +94,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': os.path.join(BASE_DIR, 'beeer.psql'),
-    }
-}
+DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
+
 
 
 # Internationalization
@@ -127,8 +123,8 @@ ALLOWED_HOSTS = ['*']
 
 DEBUG = False
 
-GEOS_LIBRARY_PATH = environ.get('GEOS_LIBRARY_PATH')
-GDAL_LIBRARY_PATH = environ.get('GDAL_LIBRARY_PATH')
+# GEOS_LIBRARY_PATH = environ.get('GEOS_LIBRARY_PATH')
+# GDAL_LIBRARY_PATH = environ.get('GDAL_LIBRARY_PATH')
 
 DATABASES['default'] = dj_database_url.config()
 
