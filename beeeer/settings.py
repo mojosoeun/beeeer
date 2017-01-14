@@ -12,14 +12,14 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 
 import os
 
-try:
-    from settings_local import *
-except ImportError:
-    try:
-        from settings_remote import *
-    except ImportError:
-        pass
-        
+import dj_database_url
+
+DATABASES = {
+    'default': dj_database_url.config(default=os.environ['DATABASE_URL'])
+}
+# Add PostGIS engine
+DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
