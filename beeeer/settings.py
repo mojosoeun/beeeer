@@ -12,9 +12,14 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 
 import os
 
-import dj_database_url
-db_from_env = dj_database_url.config()
-
+try:
+    from settings_local import *
+except ImportError:
+    try:
+        from settings_remote import *
+    except ImportError:
+        pass
+        
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -81,16 +86,16 @@ WSGI_APPLICATION = 'beeeer.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'beeeer',
-        'USER': 'sona',
-        'PASSWORD': '',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.contrib.gis.db.backends.postgis',
+#         'NAME': 'beeeer',
+#         'USER': 'sona',
+#         'PASSWORD': '',
+#         'HOST': '127.0.0.1',
+#         'PORT': '5432',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
