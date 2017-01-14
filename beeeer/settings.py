@@ -96,6 +96,11 @@ AUTH_PASSWORD_VALIDATORS = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'beeeer',
+        'USER': 'sona',
+        'PASSWORD': '',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 DATABASES['default'] = dj_database_url.config()
