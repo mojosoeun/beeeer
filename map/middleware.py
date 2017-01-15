@@ -36,7 +36,7 @@ class JsonResponseMiddleware(MiddlewareMixin):
 
     def process_request(self, request):
         if request.path == '/':
-            return redirect('/post')
+            return redirect('/all')
 
     def process_response(self, request, response):
         if isinstance(response, QuerySet):
