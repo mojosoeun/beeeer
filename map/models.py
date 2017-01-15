@@ -1,16 +1,15 @@
 from __future__ import unicode_literals
 from django.contrib.gis.db import models
 
-class Bar(models.Model):
+class Place(models.Model):
     name = models.CharField(max_length=50)
-    korean_address = models.CharField(max_length=100)
-    english_address = models.CharField(max_length=100)
-    lon = models.FloatField()
+    address = models.CharField(max_length=200)
     lat = models.FloatField()
+    lon = models.FloatField()
     rating = models.FloatField(default=0.00)
-    desc = models.TextField(blank=True, null=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    description = models.TextField(blank=True, null=True)
+    createdtime = models.DateTimeField(auto_now_add=True)
+    updatedtime = models.DateTimeField(auto_now=True)
 
     # Returns the string representation of the model.
     def __str__(self):  # __unicode__ on Python 2
