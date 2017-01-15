@@ -1,4 +1,4 @@
-from .models import Bar
+from .models import Place
 
 def post_list(request):
-    return Bar.objects.all()
+    return Place.objects.all()

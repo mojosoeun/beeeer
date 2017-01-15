@@ -11,19 +11,18 @@ except ImportError:
     MiddlewareMixin = object
 
 def json_response(qs):
-    mylist = []
+    json_list = []
     for instance in qs:
-        mylist.append({
+        json_list.append({
             'id': instance.id,
             'name': instance.name,
-            'korean_address' : instance.korean_address,
-            'english_address' : instance.english_address,
-            'lon': instance.lon,
+            'address' : instance.address,
             'lat': instance.lat,
+            'lon': instance.lon,
             'rating': instance.rating,
-            'desc': instance.desc
+            'description': instance.description
         })
-    return JsonResponse(mylist, safe=False)
+    return JsonResponse(json_list, safe=False)
 
 
 class JsonResponseMiddleware(MiddlewareMixin):
