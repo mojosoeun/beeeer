@@ -146,6 +146,10 @@ try:
 except ImportError:
     pass
 
+AWS_ACCESS_KEY_ID = 'xxxxxx'
+
+AWS_SECRET_ACCESS_KEY = 'xxxxxxx'
+
 AWS_STORAGE_BUCKET_NAME = 'beeeer-image'
 
 S3_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
