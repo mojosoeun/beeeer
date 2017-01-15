@@ -3,6 +3,7 @@ from django.contrib.gis.db import models
 
 class Place(models.Model):
     name = models.CharField(max_length=50)
+    image = models.ImageField(null=True)
     address = models.CharField(max_length=200)
     lat = models.FloatField()
     lon = models.FloatField()

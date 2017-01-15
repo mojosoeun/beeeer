@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.gis',
-    'map'
+    'map',
+    'storages'
 ]
 
 MIDDLEWARE = [
@@ -133,8 +134,19 @@ DEBUG = False
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+
+AWS_ACCESS_KEY_ID = ''
+
+AWS_SECRET_ACCESS_KEY = ''
+
+AWS_STORAGE_BUCKET_NAME = ''
+
 try:
     from .local_settings import *
 except ImportError:
