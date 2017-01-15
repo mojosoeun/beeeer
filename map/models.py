@@ -6,7 +6,7 @@ class Place(models.Model):
     image = models.ImageField(null=True)
     address = models.CharField(max_length=200)
     lat = models.FloatField()
-    lon = models.FloatField()
+    lng = models.FloatField()
     rating = models.FloatField(default=0.00)
     description = models.TextField(blank=True, null=True)
     createdtime = models.DateTimeField(auto_now_add=True)

@@ -18,7 +18,7 @@ def json_response(qs):
             'name': instance.name,
             'address' : instance.address,
             'lat': instance.lat,
-            'lon': instance.lon,
+            'lgn': instance.lng,
             'rating': instance.rating,
             'description': instance.description,
             'createdtime': instance.createdtime,
