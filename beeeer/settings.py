@@ -146,6 +146,7 @@ try:
 except ImportError:
     pass
 
+AWS_STORAGE_BUCKET_NAME = 'beeeer-image'
 
 S3_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
 
