@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.gis',
     'map',
-    'storages'
+    'storages',
+    # 'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -53,7 +54,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
-    'map.middleware.JsonResponseMiddleware'
+    'map.middleware.JsonResponseMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'beeeer.urls'
@@ -93,6 +95,12 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+CORS_ORIGIN_WHITELIST = (
+    'beeeer.herokuapp.com',
+    'localhost:8000',
+    '127.0.0.1:8000'
+)
 
 DATABASES = {
     'default': {
