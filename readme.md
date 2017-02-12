@@ -15,3 +15,10 @@
 5. Make sure the database settings match up with your postgres setup. Especially user and password
 6. Terminal: `python manage.py migrate`
     - If you get errors about `GDAL`, you might need to run `brew install gdal`
+
+
+-- Adding the react frontend
+
+1. Run `npm run build` in the frontend repo
+2. Copy all files from the build folder in the front end app to the static folder in the django app
+3. Copy the `index.html` to `beeeer/templates` 
