@@ -63,7 +63,7 @@ ROOT_URLCONF = 'beeeer.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['beeeer/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -146,9 +146,6 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
 # STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
-
 try:
     from .local_settings import *
 except ImportError:
@@ -162,3 +159,5 @@ S3_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
 STATIC_URL = S3_URL
 
 AWS_QUERYSTRING_AUTH = False
+
+REACT_STATIC_URL = '/'

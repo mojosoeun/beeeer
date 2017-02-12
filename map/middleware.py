@@ -45,10 +45,6 @@ class JsonResponseMiddleware(MiddlewareMixin):
 
         super(JsonResponseMiddleware, self).__init__(*args, **kwargs)
 
-    def process_request(self, request):
-        if request.path == '/':
-            return redirect('/all')
-
     def process_response(self, request, response):
         if isinstance(response, QuerySet):
             return json_response(response)

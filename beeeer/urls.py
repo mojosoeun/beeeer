@@ -15,9 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
+
+from django.views.generic import TemplateView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'', include('map.urls')),
-
-]
+    url(r'map/', include('map.urls')),
+    url(r'^$', TemplateView.as_view(template_name='index.html')),
+] + static(settings.REACT_STATIC_URL, document_root=settings.STATIC_ROOT)
